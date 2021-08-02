@@ -17,13 +17,15 @@
 
   <ion-card *ngFor="let p of posts | async">
     <ion-card-header>
-      <ion-card-subtitle>Subtitulo</ion-card-subtitle>
+      
       <ion-card-title>{{p.title}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
       {{p.content}}
     </ion-card-content>
+    <ion-card-subtitle>Comentarios</ion-card-subtitle>
+
   </ion-card>
 
 </ion-content>
