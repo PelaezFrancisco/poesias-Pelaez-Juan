@@ -1,0 +1,36 @@
+<ion-list id="inbox-list">
+  <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+    <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+      <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+      <ion-label>{{ p.title }}</ion-label>
+    </ion-item>
+  </ion-menu-toggle>
+</ion-list>
+
+
+
+
+  <ion-content>
+
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Crea un post</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+
+      <ion-label>Titulo</ion-label>
+      <ion-input [(ngModel)]="post.title" placeholder="Titulo" type="text"></ion-input> 
+
+      <ion-label>Contenido</ion-label>
+      <ion-input [(ngModel)]="post.content" placeholder="Contenido" type="text"></ion-input>
+      
+      <ion-label>Imagen</ion-label>
+      <ion-input [(ngModel)]="post.image" placeholder="Imagen" type="text"></ion-input>
+
+      <ion-button (click)="guardar()" color="primary">Crear</ion-button>
+
+  </ion-content>
+
+
+

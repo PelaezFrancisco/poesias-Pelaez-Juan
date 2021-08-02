@@ -1,0 +1,35 @@
+<ion-list id="inbox-list">
+  <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+    <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+      <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+      <ion-label>{{ p.title }}</ion-label>
+    </ion-item>
+  </ion-menu-toggle>
+</ion-list>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>crearUsuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label>Email</ion-label>
+  <ion-input [(ngModel)]="user.email" placeholder="Email" type="text"></ion-input> 
+
+  <ion-label>Nombre</ion-label>
+  <ion-input [(ngModel)]="user.name" placeholder="Nombre" type="text"></ion-input> 
+
+  <ion-label>Apellido</ion-label>
+  <ion-input [(ngModel)]="user.apellido" placeholder="Apellido" type="text"></ion-input> 
+
+  <ion-label>Contrasena</ion-label>
+  <ion-input [(ngModel)]="user.password" placeholder="Contrasena" type="password"></ion-input>
+
+  <ion-label>Repita su Contrasena</ion-label>
+  <ion-input placeholder=" Contrasena" type="password"></ion-input>
+
+  <ion-button (click)="createAccount()" color="primary">Crear</ion-button>
+
+</ion-content>
