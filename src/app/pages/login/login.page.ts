@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
 
   async logout() {
     await this.afAuth.signOut();
+    console.log("Cerro Sesion")
   }
 
  
